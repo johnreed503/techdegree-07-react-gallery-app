@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import {
   Container,
   Jumbotron,
@@ -13,8 +14,7 @@ import {
 //import Results from './components/Results';
 
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
       <div>
         <Jumbotron>
@@ -26,8 +26,20 @@ class App extends Component {
         <Results />
       </div>
     );
-  }
 }
+// class App extends Component {
+//     return (
+//       <div>
+//         <Jumbotron>
+//           <Container>
+//             <SearchForm />
+//             <Nav />
+//           </Container>
+//         </Jumbotron>
+//         <Results />
+//       </div>
+//     );
+// }
 
 // const Photo = () => {
 //   return (
@@ -86,3 +98,8 @@ const NotFound = () => {
 
 
 export default App;
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+)
