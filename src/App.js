@@ -24,6 +24,7 @@ const App = () => {
           </Container>
         </Jumbotron>
         <Results />
+        <NotFound />
       </div>
     );
 }
@@ -41,39 +42,49 @@ const App = () => {
 //     );
 // }
 
-// const Photo = () => {
-//   return (
-//     <img scr="" alt>
-//   )
-// };
-
-const SearchForm = () => {
+//stateless
+const Photo = () => {
   return (
-  <Form inline>
-    <FormGroup controlId="formInlineEmail">
-      <FormControl type="search" placeholder="enter something..." />
-    </FormGroup>
-    {' '}
-    <Button type="submit">
-      search
-    </Button>
-  </Form>
-)
-}
-
-const Results = () => {
-  return (
-    <Container>
-  <h2>Results List</h2>
-  <ListGroup>
-    <ListGroupItem href="#" active>Link 1</ListGroupItem>
-    <ListGroupItem href="#">Link 2</ListGroupItem>
-    <ListGroupItem href="#" disabled>Link 3</ListGroupItem>
-  </ListGroup>
-</Container>
-)
+    <li>
+      <img scr="" alt></img>
+    </li>
+  )
 };
 
+//stateful
+class SearchForm extends React.Component {
+  render() {
+    return (
+      <Form inline>
+        <FormGroup controlId="formInlineEmail">
+          <FormControl type="search" placeholder="enter something..." />
+        </FormGroup>
+        {' '}
+        <Button type="submit">
+          search
+        </Button>
+      </Form>
+    );
+  }
+}
+
+//stateful (photoContainer)
+class Results extends React.Component {
+  render() {
+    return (
+      <Container>
+        <h2>Results List</h2>
+        <ListGroup>
+          <ListGroupItem href="#" active>Link 1</ListGroupItem>
+          <ListGroupItem href="#">Link 2</ListGroupItem>
+          <ListGroupItem href="#" disabled>Link 3</ListGroupItem>
+        </ListGroup>
+      </Container>
+    )
+  }
+};
+
+//stateless
 const Nav = () => {
   return (
     <nav class="main-nav">
@@ -92,8 +103,14 @@ const Nav = () => {
   )
 }
 
+//stateless
 const NotFound = () => {
-
+  return (
+    <div>
+      <h3>Not Found</h3>
+      <p>Please try again</p>
+    </div>
+  )
 }
 
 
